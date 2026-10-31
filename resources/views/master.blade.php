@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Products | {{ config('app.name', 'Laravel') }}</title>
+    <title>Products |  @yield('pageTitle', 'Laravel') </title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
@@ -13,5 +13,8 @@
         
 
     </main>
+    @section('footerScripts')
+        <script src="app.js"></script>
+    @show
 </body>
 </html>

@@ -1,4 +1,5 @@
 @extends('master')
+@section('pageTitle', 'Product List')
 @section('content')
         <header class="mb-8">
             <p class="text-sm font-semibold uppercase tracking-wider text-indigo-600">Inventory</p>
@@ -67,4 +68,10 @@
                 </div>
             @endif
         </section>
+        <x-modal  title="Title here yay" />
+@endsection
+
+@section('footerScripts')
+    <script src="kamal.js"></script>
+    @parent
 @endsection
