@@ -12,7 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
+        //Product::factory()->count(500)->create();
+        $products = Product::all();
         return view('product.index', compact('products'));
     }
 
