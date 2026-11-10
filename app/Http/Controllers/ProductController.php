@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         //Product::factory()->count(500)->create();
-        $products = Product::all();
+        $products = Product::get();
         return view('product.index', compact('products'));
     }
 
@@ -30,6 +30,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         Product::create($request->only(['name', 'description', 'price']));
         //   $product=new Product();
         //   $product->name=$request->name;
@@ -50,8 +51,9 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit( $pId)
     {
+        $product = Product::findOrFail($pId);
         return view('product.edit', compact('product'));
     }
 

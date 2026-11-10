@@ -33,6 +33,7 @@
                         <thead class="bg-slate-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-500">Product</th>
+                                <th scope="col" class="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-500">Category</th>
                                 <th scope="col" class="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-slate-500">Description</th>
                                 <th scope="col" class="px-6 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-slate-500">Price</th>
                                 <th scope="col" class="px-6 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-slate-500">Actions</th>
@@ -44,6 +45,9 @@
                                     <th scope="row" class="whitespace-nowrap px-6 py-4 text-sm font-semibold text-slate-900">
                                         {{ $product->name }}
                                     </th>
+                                    <td class="whitespace-nowrap px-6 py-4 text-sm text-slate-600">
+                                        {{ $product->category?->name }}
+                                    </td>
                                     <td class="max-w-xl px-6 py-4 text-sm leading-6 text-slate-600">
                                         <p class="line-clamp-2">{{ $product->description }}</p>
                                     </td>
