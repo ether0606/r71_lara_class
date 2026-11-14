@@ -14,8 +14,8 @@ Route::get('/category', function () {
 Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->group(function () {
-        Route::get('tasks', [TaskController::class, 'index']);
-        Route::get('/tasks/{k}', [TaskController::class, 'show']);
+        Route::get('tasks', [TaskController::class, 'index'])->name('admin.tasks.index');
+        Route::get('/tasks/{k}', [TaskController::class, 'show'])->name('admin.tasks.show');
     });
 });
 

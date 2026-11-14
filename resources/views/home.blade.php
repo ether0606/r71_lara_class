@@ -6,6 +6,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
+                <a href="{{ route('admin.tasks.index') }}" class="btn btn-primary">Task</a>
+                @can('create post')
+                    <a href="{{ route('products.index') }}" class="btn btn-primary">Products</a>
+                @endcan
+                
 
                 <div class="card-body">
                     @if (session('status'))
